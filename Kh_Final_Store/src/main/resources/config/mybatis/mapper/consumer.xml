@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="c">
+	<select id="mypage_list" resultType="consumer">
+		select name, bonus_point from consumer
+	</select>
+	
+	<select id="check_id" resultType="consumer">
+		select * from consumer where c_id=#{c_id}
+	</select>
+	
+	<insert id="insert_user" parameterType="consumer">
+		insert into consumer values(
+			#{c_id},
+			#{name},
+			#{pwd},
+			#{email},
+			#{gender},
+			0,
+			0,
+			0,
+			#{tel}
+		)
+	</insert>
+	
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

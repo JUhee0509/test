@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pd">
+	<!-- SHOP 페이지 전체조회. product테이블 조회 -->
+	<select id="product_list" resultType="prod">
+		select * from product order by p_idx DESC
+	</select>
+	
+	<!-- 미완성. 분류 기준 조회 -->
+	<select id="prod_view" resultType="java.util.List" parameterType="String">
+		SELECT DISTINCT #{standard} FROM RPOD_VIEW order by #{standard};
+	</select>
+	
+	<select id="pro_view" parameterType="int" resultType="prod">
+		select * from product where p_idx=#{p_idx}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
